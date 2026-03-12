@@ -1,61 +1,74 @@
-***ConvoCall – Video Meeting Application***
+# ConvoCall – Video Meeting Application
 
-A full-stack real-time video conferencing web application that allows users to create and join video meetings directly from the browser. The platform enables seamless communication using WebRTC for peer-to-peer media streaming and Socket.io for real-time signaling.
+A full-stack **real-time video conferencing web application** that allows users to create and join video meetings directly from the browser.
+The platform uses **WebRTC for peer-to-peer media streaming** and **Socket.io for real-time signaling** to enable seamless video communication.
 
 The application supports authentication, meeting rooms, and live video/audio interaction, providing a lightweight alternative to platforms like Zoom or Google Meet.
 
+---
 
-**Live Demo**
+## Live Demo
+
 Frontend:
 https://convovideocallfrontend.onrender.com/
 
+---
 
-**Features**
-• Secure user authentication and account management
-• Create and join meeting rooms using unique meeting IDs
-• Real-time video and audio communication
-• Peer-to-peer video streaming using WebRTC
-• Real-time signaling using Socket.io
-• Responsive UI for desktop and mobile devices
-• Backend API for managing users and meetings
-• MongoDB database for persistent data storage
+## Features
 
+* Secure user authentication and account management
+* Create and join meeting rooms using unique meeting IDs
+* Real-time video and audio communication
+* Peer-to-peer video streaming using WebRTC
+* Real-time signaling using Socket.io
+* Responsive UI for desktop and mobile devices
+* Backend API for managing users and meetings
+* MongoDB database for persistent data storage
 
-******Tech Stack******
+---
 
-**Frontend**
-React.js
-JavaScript
-HTML5
-CSS3
+## Tech Stack
 
-**Backend**
-Node.js
-Express.js
+### Frontend
 
-**Real-Time Communication**
-Socket.io
-WebRTC
+* React.js
+* JavaScript
+* HTML5
+* CSS3
 
-**Database**
-MongoDB
+### Backend
 
-**Deployment**
-Render (Frontend + Backend)
+* Node.js
+* Express.js
 
-**System Architecture**
+### Real-Time Communication
+
+* Socket.io
+* WebRTC
+
+### Database
+
+* MongoDB
+
+### Deployment
+
+* Render (Frontend + Backend)
+
+---
+
+## System Architecture
 
 User opens meeting page
-↓
-Frontend connects to backend server
-↓
-Socket.io establishes signaling connection
-↓
-WebRTC creates peer-to-peer connection between users
-↓
-Audio & video streams are exchanged directly between participants
+→ Frontend connects to backend server
+→ Socket.io establishes signaling connection
+→ WebRTC creates peer-to-peer connection between users
+→ Audio & video streams are exchanged directly between participants
 
-**Project Structure**
+---
+
+## Project Structure
+
+```
 convocall
 │
 ├── backend
@@ -63,12 +76,16 @@ convocall
 │   │   ├── controllers
 │   │   │   ├── socketManager.js
 │   │   │   └── user.controller.js
+│   │   │
 │   │   ├── models
 │   │   │   ├── user.model.js
 │   │   │   └── meeting.model.js
+│   │   │
 │   │   ├── routes
 │   │   │   └── users.routes.js
+│   │   │
 │   │   └── app.js
+│   │
 │   └── package.json
 │
 ├── frontend
@@ -76,47 +93,93 @@ convocall
 │   │   ├── contexts
 │   │   ├── components
 │   │   └── App.jsx
+│   │
 │   └── package.json
 │
 └── README.md
+```
 
+---
 
-**Installation and Setup**
+## Installation and Setup
 
-**1. Clone the repository**
+### 1. Clone the repository
+
+```
 git clone https://github.com/ayush-shivhare/convocall.git
 cd convocall
+```
 
-**2. Backend Setup**
+---
+
+### 2. Backend Setup
+
+```
 cd backend
 npm install
+```
 
+Create a `.env` file:
 
-**Run the server:**
+```
+MONGO_URI=your_mongodb_connection_string
+PORT=5000
+```
+
+Run the backend server:
+
+```
 npm start
+```
 
-**3. Frontend Setup**
+---
+
+### 3. Frontend Setup
+
+```
 cd frontend
 npm install
 npm start
+```
 
-**Frontend will run on:**
+Frontend will run on:
+
+```
 http://localhost:3000
+```
 
-***Key Concepts Used***
+---
 
-*WebRTC*
-WebRTC enables real-time peer-to-peer communication between browsers without needing intermediate servers for media transfer. It is responsible for transmitting video and audio streams between users.
+## Key Concepts Used
 
-*Socket.io*
-Socket.io is used as the signaling mechanism that helps peers exchange connection information (SDP offers, answers, ICE candidates) required to establish a WebRTC connection.
+### WebRTC
 
-*MongoDB*
-MongoDB stores user information and meeting data, allowing persistent session and user management.
+WebRTC enables real-time peer-to-peer communication between browsers without requiring a central server for media streaming.
 
+### Socket.io
 
-***Author***
-Ayush Shivhare
+Socket.io is used for signaling between users to exchange connection data required for establishing WebRTC connections.
+
+### MongoDB
+
+MongoDB stores user information and meeting data, enabling persistent storage.
+
+---
+
+## Future Improvements
+
+* Screen sharing functionality
+* In-meeting chat system
+* Meeting recording
+* Participant controls (mute / remove)
+* Waiting rooms and host permissions
+* Improved UI/UX
+
+---
+
+## Author
+
+**Ayush Shivhare**
 B.Tech CSE – VIT Vellore
 
 LinkedIn
